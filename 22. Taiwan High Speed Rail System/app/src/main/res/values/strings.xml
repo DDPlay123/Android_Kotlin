@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Taiwan High Speed Rail System</string>
+    <string name="StationStart_">起點站：</string>
+    <string name="StationEnd_">終點站：</string>
+    <string name="StationStart">起始站點</string>
+    <string name="StationEnd">終點站點</string>
+
+    <string name="StationSearch">站點搜尋</string>
+    <string name="RouteSearch">路線規劃搜尋</string>
+
+    <string name="Message">訊息</string>
+    <string name="Cancel">取消</string>
+    <string name="Confirm">確定</string>
+
+    <string name="StationName">站名</string>
+    <string name="SetStationStart">設定成起點</string>
+    <string name="SetStationEnd">設定成終點</string>
+
+    <string name="NearRestaurant">附近的餐廳</string>
+
+    <string name="TrainNumber">車次</string>
+    <string name="DepartureTime">發車時間</string>
+    <string name="TrainTime">車程</string>
+
+    <string name="ArrivalTime">到站時間</string>
+    <string name="StartTime">表定發車</string>
+    <string name="StopStation">沿途停靠</string>
+    <string name="InputStation">請輸入站點名稱或地址</string>
+
+    <string name="loading">Loading…</string>
+</resources>

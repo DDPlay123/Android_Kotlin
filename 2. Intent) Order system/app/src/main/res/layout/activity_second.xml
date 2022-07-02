@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondActivity">
+
+    <LinearLayout
+        android:id="@+id/LL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/drink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/drink"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edit_drink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/drink_name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#757575"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/drink"
+            app:layout_constraintTop_toBottomOf="@+id/drink" />
+
+        <TextView
+            android:id="@+id/sweet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/sweet"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@+id/drink"
+            app:layout_constraintTop_toBottomOf="@+id/edit_drink" />
+
+        <RadioGroup
+            android:id="@+id/select_sweet"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/drink"
+            app:layout_constraintTop_toBottomOf="@+id/sweet">
+            <RadioButton
+                android:id="@+id/no_sugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_sugar" />
+            <RadioButton
+                android:id="@+id/low_sugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/low_sugar" />
+            <RadioButton
+                android:id="@+id/half_sugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/half_sugar" />
+            <RadioButton
+                android:id="@+id/full_sugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/full_sugar"
+                android:checked="true"/>
+        </RadioGroup>
+        <TextView
+            android:id="@+id/ice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/ice"
+            android:textSize="22sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="@+id/drink"
+            app:layout_constraintTop_toBottomOf="@+id/select_sweet" />
+        <RadioGroup
+            android:id="@+id/select_ice"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/drink"
+            app:layout_constraintTop_toBottomOf="@+id/ice">
+
+            <RadioButton
+                android:id="@+id/no_ice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_ice" />
+
+            <RadioButton
+                android:id="@+id/low_ice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/low_ice" />
+
+            <RadioButton
+                android:id="@+id/less_ice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/less_ice" />
+            <RadioButton
+                android:id="@+id/full_ice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fill_ice"
+                android:checked="true"/>
+        </RadioGroup>
+        <Button
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/send"
+            app:layout_constraintStart_toStartOf="@+id/drink"
+            app:layout_constraintTop_toBottomOf="@+id/select_ice" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

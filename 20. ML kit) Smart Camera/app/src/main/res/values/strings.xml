@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Smart Camera</string>
+    <string name="rotate">旋轉</string>
+    <string name="Photograph">拍照</string>
+</resources>

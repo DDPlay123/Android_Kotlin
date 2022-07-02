@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Message hint</string>
+    <string name="toast">預設TOAST</string>
+    <string name="custom_toast">自定義TOAST</string>
+    <string name="button_snackBar">按鈕式SNACKBAR</string>
+    <string name="button_alertdialog">按鈕式ALERTDIALOG</string>
+    <string name="table_alertdialog">列表式ALERTDIALOG</string>
+    <string name="single_button_alertdialog">單選式ALERTDIALOG</string>
+</resources>

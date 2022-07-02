@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Library System</string>
+    <string name="bookName">書名:</string>
+    <string name="bookValue">價格:</string>
+    <string name="post">新增</string>
+    <string name="put">修改</string>
+    <string name="delete">刪除</string>
+    <string name="get">查詢</string>
+</resources>

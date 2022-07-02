@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Media Camera build</string>
+    <string name="photograph">拍照</string>
+    <string name="rotate_90">旋轉 90 度</string>
+</resources>

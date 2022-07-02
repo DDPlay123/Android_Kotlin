@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Finger-Guessing game</string>
+    <string name="PleaseInputYourName">請輸入你的名字</string>
+    <string name="PleaseInputYourNameAndStartGame">請輸入你的名字並開始遊戲</string>
+    <string name="paper">布</string>
+    <string name="scissor">剪刀</string>
+    <string name="stone">石頭</string>
+    <string name="mora">猜拳</string>
+    <string name="name">你的名稱</string>
+    <string name="winner">贏家</string>
+    <string name="PlayerMora">玩家出拳</string>
+    <string name="PcMora">電腦出拳</string>
+</resources>

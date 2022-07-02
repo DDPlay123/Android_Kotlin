@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Radio Station</string>
+    <string name="musicCh">音樂頻道</string>
+    <string name="newsCh">新聞頻道</string>
+    <string name="sportCh">體育頻道</string>
+    <string name="PleaseSelectCh">請選擇收聽頻道</string>
+</resources>

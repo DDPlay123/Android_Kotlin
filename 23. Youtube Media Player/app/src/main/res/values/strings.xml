@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Youtube Media Player</string>
+    <string name="Main_page">主頁面</string>
+    <string name="Community_page">社群</string>
+    <string name="Chat_page">聊天</string>
+    <string name="Information_page">資訊</string>
+    <string name="italkutalk">iTalkuTalk</string>
+    <string name="Level_">程度▼</string>
+    <string name="Sort_">排序▼</string>
+    <string name="Search_">搜尋▼</string>
+    <string name="_0">0</string>
+    <string name="junior">初級</string>
+    <string name="title">標題</string>
+    <string name="VideoPlayer_iFrame">影片播放(iFrame)</string>
+    <string name="hello_world">Hello World</string>
+    <string name="_1">1</string>
+    <string name="editor">主編輯</string>
+    <string name="loading">loading…</string>
+</resources>

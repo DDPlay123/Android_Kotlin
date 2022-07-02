@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.DetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#CCCCCC">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_gravity="center" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/img_photo"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="3dp"
+                app:srcCompat="@android:drawable/sym_def_app_icon"
+                android:layout_gravity="center"
+                tools:ignore="ContentDescription" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            tools:text="HotelM台北門精品旅行店"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            tools:text="台北市中正區漢口街一段61號"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:gravity="center"/>
+
+        <GridView
+            android:id="@+id/grid_star"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_margin="3dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/tv_photos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="0dp"
+            tools:text="等待中..."
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="12sp"/>
+
+        <GridView
+            android:id="@+id/grid_photos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="6dp"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

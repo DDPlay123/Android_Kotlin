@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Attractions Search</string>
+    <string name="search_bar_hint">名稱、地址搜尋</string>
+    <string name="search">搜尋</string>
+    <string name="searchRecord">搜尋紀錄</string>
+    <string name="searchResult">搜尋結果</string>
+    <string name="clearRecord">清除紀錄</string>
+    <string name="message">訊息</string>
+    <string name="hotelInfo">旅店資訊</string>
+    <string name="hotelGps">旅店導航</string>
+</resources>

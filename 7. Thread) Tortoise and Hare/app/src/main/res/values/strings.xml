@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Tortoise and Hare</string>
+    <string name="rabbit">兔子</string>
+    <string name="turtle">烏龜</string>
+    <string name="start">開始</string>
+    <string name="TortoiseAndHare">龜兔賽跑</string>
+</resources>

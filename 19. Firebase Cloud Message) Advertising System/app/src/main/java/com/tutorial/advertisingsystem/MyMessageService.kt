@@ -1,0 +1,21 @@
+package com.tutorial.advertisingsystem
+
+import android.util.Log
+import com.google.firebase.messaging.FirebaseMessagingService
+import com.google.firebase.messaging.RemoteMessage
+
+class MyMessageService : FirebaseMessagingService() {
+    // 取得新的 Token 時被調用，通常會於第一次啟動應用程式時進入
+    override fun onNewToken(token: String) {
+        super.onNewToken(token)
+        Log.e("New Token", token)
+    }
+    // 應用程式正呈現於螢幕且收到推播通知時進入
+    override fun onMessageReceived(message: RemoteMessage) {
+        super.onMessageReceived(message)
+        // 藉由 forEach 將通知附帶的資料取出
+        message.data.entries.forEach {
+            Log.e("data", "key:${it.key}, value:${it.value}")
+        }
+    }
+}

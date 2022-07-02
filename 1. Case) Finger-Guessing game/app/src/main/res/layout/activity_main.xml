@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="32dp"
+        android:textSize="24sp"
+        android:ems="10"
+        android:hint="@string/PleaseInputYourName"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/text_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/PleaseInputYourNameAndStartGame"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/edit_name"
+        app:layout_constraintTop_toBottomOf="@+id/edit_name"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/text_name"
+        app:layout_constraintTop_toBottomOf="@+id/text_name">
+
+        <RadioButton
+            android:id="@+id/paper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/paper"
+            android:textColor="#00838F"
+            tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
+        <RadioButton
+            android:id="@+id/scissor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/scissor" />
+
+        <RadioButton
+            android:id="@+id/stone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stone" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/mora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mora"
+        app:layout_constraintStart_toStartOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"/>
+
+    <LinearLayout
+        android:id="@+id/LLTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:layout_margin="12dp"
+        app:layout_constraintStart_toStartOf="@+id/mora"
+        app:layout_constraintTop_toBottomOf="@+id/mora">
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/PlayerMora" />
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/winner" />
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/PcMora" />
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/name" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:layout_margin="12dp"
+        app:layout_constraintStart_toStartOf="@+id/LLTable"
+        app:layout_constraintTop_toBottomOf="@+id/LLTable">
+
+        <TextView
+            android:id="@+id/player_mora"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/winner"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/pc_mora"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/player_name"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

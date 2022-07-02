@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">BMI</string>
+    <string name="BMI">體位檢測機</string>
+    <string name="height_">身高 :</string>
+    <string name="weight_">體重 :</string>
+    <string name="age_">年齡 :</string>
+    <string name="boy">男生</string>
+    <string name="girl">女生</string>
+    <string name="calculate">計算</string>
+    <string name="tvWeight">標準體重\n 無</string>
+    <string name="tvFat">體脂肪\n 無</string>
+    <string name="tvBmi">BMI\n 無</string>
+    <string name="_0">0%</string>
+</resources>

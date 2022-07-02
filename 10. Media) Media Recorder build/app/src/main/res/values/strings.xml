@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Media Recorder build</string>
+    <string name="PleaseStartRecord">請開始錄音</string>
+    <string name="record">錄音</string>
+    <string name="stopRecord">停止錄音</string>
+    <string name="play">播放</string>
+    <string name="stopPlay">停止播放</string>
+</resources>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Order system</string>
+    <string name="ice">冰塊</string>
+    <string name="send">送出</string>
+    <string name="no_ice">去冰</string>
+    <string name="low_ice">微冰</string>
+    <string name="less_ice">少冰</string>
+    <string name="fill_ice">正常冰</string>
+    <string name="drink">飲料</string>
+    <string name="sweet">甜度</string>
+    <string name="no_sugar">無糖</string>
+    <string name="low_sugar">微糖</string>
+    <string name="half_sugar">半糖</string>
+    <string name="full_sugar">全糖</string>
+    <string name="drink_name">請輸入飲料名稱</string>
+    <string name="check_order">確認餐點:</string>
+    <string name="menu">飲料: 無\n\n甜度: 無\n\n冰塊: 無</string>
+    <string name="select">選擇</string>
+</resources>

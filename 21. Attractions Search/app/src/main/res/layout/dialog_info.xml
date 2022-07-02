@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/background_light_green_10_radius">
+
+    <TextView
+        android:id="@+id/tv_msg"
+        android:text="@string/message"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:layout_margin="10dp"
+        android:textStyle = "bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_info"
+            android:drawableTop="@drawable/icon_hotel"
+            android:text="@string/hotelInfo"
+            android:background="@drawable/btn_light_orange_30_radius"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:textStyle = "bold"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:textColor="@color/black"
+            tools:ignore="ButtonStyle" />
+        <Button
+            android:id="@+id/btn_gps"
+            android:drawableTop="@drawable/icon_gps"
+            android:text="@string/hotelGps"
+            android:background="@drawable/btn_light_orange_30_radius"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:textStyle = "bold"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:textColor="@color/black"
+            tools:ignore="ButtonStyle" />
+    </LinearLayout>
+
+</LinearLayout>

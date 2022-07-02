@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Animation build</string>
+    <string name="start">開始</string>
+    <string name="stop">停止</string>
+    <string name="alpha">透明</string>
+    <string name="scale">縮放</string>
+    <string name="translate">位移</string>
+    <string name="rotate">旋轉</string>
+</resources>
