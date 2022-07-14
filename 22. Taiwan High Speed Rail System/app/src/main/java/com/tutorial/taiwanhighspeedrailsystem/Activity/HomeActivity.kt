@@ -159,7 +159,14 @@ class HomeActivity : AppCompatActivity(), OnMapReadyCallback {
                                     LatLng(marker.position.latitude, marker.position.longitude), 20f))
                             R.id.SetOriginSite -> edStart.text = marker.title
                             R.id.SetEndSite -> edEnd.text = marker.title
-                            R.id.NearRestaurant -> startActivity(Intent(this, RestaurantActivity::class.java))
+                            R.id.NearRestaurant -> {
+                                val bundle = Bundle()
+                                bundle.putDouble("lat", marker.position.latitude)
+                                bundle.putDouble("lng", marker.position.longitude)
+                                val intent = Intent(this, RestaurantActivity::class.java)
+                                intent.putExtras(bundle)
+                                startActivity(intent)
+                            }
                             R.id.Cancel -> popupMenu.dismiss()
                         }
                         true

@@ -49,6 +49,6 @@ dependencies {
     // Okhttp
     implementation 'com.google.code.gson:gson:2.8.9'
     implementation 'com.squareup.okhttp3:okhttp:4.9.0'
-    // Picasso use imageView on URL
-    implementation 'com.squareup.picasso:picasso:2.8'
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }

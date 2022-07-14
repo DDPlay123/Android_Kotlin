@@ -77,7 +77,7 @@ class StationActivity : AppCompatActivity() {
                                     ),  // 到站時間
                                     detail.DestinationStopTime.ArrivalTime))
                         }
-                    } catch (e: ParseException) {
+                    } catch (e: Exception) {
                         e.printStackTrace()
                     }
                     runOnUiThread {

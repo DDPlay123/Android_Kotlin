@@ -33,11 +33,11 @@ class MainActivity : AppCompatActivity() {
             if (edHeight.length() < 1 || edWeight.length() < 1 || edAge.length() < 1) {
                 Toast.makeText(this, "請輸入身高、體重及年齡", Toast.LENGTH_SHORT).show()
             } else {
-                val height = edHeight.text.toString().toFloat()
-                val weight = edWeight.text.toString().toFloat()
-                val age = edAge.text.toString().toFloat()
+                val height = edHeight.text.toString().toDouble()
+                val weight = edWeight.text.toString().toDouble()
+                val age = edAge.text.toString().toDouble()
 
-                val bmi = weight / (height / 100).pow(2)
+                val bmi = weight / ((height / 100).pow(2))
                 val standWeight: Double
                 val bodyFat: Double
 
