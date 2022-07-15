@@ -194,7 +194,7 @@ class HomeActivity : AppCompatActivity(), OnMapReadyCallback {
     private val data: ArrayList<StationData> = ArrayList()
     @RequiresApi(api = Build.VERSION_CODES.O)
     private fun getData() {
-        val request: Request = THSR().API("Station", null, null, null, null)
+        val request: Request = THSR.API("Station", null, null, null, null)
         // GET Method
         OkHttpClient().newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {

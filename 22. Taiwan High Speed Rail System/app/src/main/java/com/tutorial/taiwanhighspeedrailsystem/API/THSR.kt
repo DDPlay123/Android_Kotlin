@@ -1,23 +1,19 @@
 package com.tutorial.taiwanhighspeedrailsystem.API
 
-import android.util.Base64
 import android.util.Log
 import com.google.gson.Gson
 import com.tutorial.taiwanhighspeedrailsystem.Data.ObjectToken
 import okhttp3.*
 import java.io.IOException
-import java.security.SignatureException
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.CountDownLatch
-import javax.crypto.Mac
-import javax.crypto.spec.SecretKeySpec
 
-class THSR {
+object THSR {
     private var accessToken: String = ""
 
-    private var beforeDate: String = SimpleDateFormat("yyyy/MM/dd", Locale.getDefault()).format(Date())
-    private lateinit var afterDate: String
+    private var beforeDate: String = "2022/07/11"
+    private var afterDate: String = "2022/07/12"
     private var isNextDay = true
 
     private lateinit var httpUrl: String
@@ -32,7 +28,7 @@ class THSR {
 
         checkNextDay()
 
-        if (accessToken == "" || isNextDay) accessToken = postToken()
+        if (isNextDay) accessToken = postToken()
 
         Log.d("Token Test", accessToken)
 
@@ -87,8 +83,8 @@ class THSR {
 
     // 取得TOKEN
     private val grantType = "client_credentials" // 固定使用"client_credentials"
-    private val clientId = "-----------------5c-4198" // Client Id
-    private val clientSecret = "----------------e3-6f6bc643bcf0" // Client Secret
+    private val clientId = "------------------3e5c-4198" // Client Id
+    private val clientSecret = "----------------8-b8e3----c643bcf0" // Client Secret
 
     // POST Token
     private fun postToken(): String {

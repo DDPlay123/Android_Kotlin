@@ -39,7 +39,7 @@ class TimeTableActivity : AppCompatActivity() {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private fun getData(trainNo: String, start: String, end: String) {
-        val request: Request = THSR().API("TrainNumber", null, null, null, trainNo)
+        val request: Request = THSR.API("TrainNumber", null, null, null, trainNo)
         // GET Method
         OkHttpClient().newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {

@@ -49,7 +49,7 @@ class StationActivity : AppCompatActivity() {
         OriginStationID: String, DestinationStationID: String,
         TrainDate: String, Start: String, End: String
     ) {
-        val request: Request = THSR().API("DailyTimetable", OriginStationID, DestinationStationID, TrainDate, null)
+        val request: Request = THSR.API("DailyTimetable", OriginStationID, DestinationStationID, TrainDate, null)
         // GET Method
         OkHttpClient().newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
