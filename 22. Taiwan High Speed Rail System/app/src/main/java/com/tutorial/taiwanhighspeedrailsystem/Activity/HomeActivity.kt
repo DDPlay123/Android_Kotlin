@@ -5,15 +5,14 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.PopupMenu
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -121,16 +120,15 @@ class HomeActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onMapReady(p0: GoogleMap) = // 檢查是否授權定位權限
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
             ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // 精確定位包含粗略定位，因此只要求精確定位權限
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 1)
         } else {
+            myMap = p0
             // 取得資料
             getData()
-            myMap = p0
             // 顯示目前位置與目前位置的按鈕
             myMap.isMyLocationEnabled = true
             // 關閉原生定位鈕
@@ -192,13 +190,13 @@ class HomeActivity : AppCompatActivity(), OnMapReadyCallback {
     }
     // 取得車站資料
     private val data: ArrayList<StationData> = ArrayList()
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private fun getData() {
         val request: Request = THSR.API("Station", null, null, null, null)
         // GET Method
         OkHttpClient().newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 e.printStackTrace()
+                Log.e("ERROR", "Data ERROR")
             }
             override fun onResponse(call: Call, response: Response) {
                 val json = response.body?.string()
@@ -231,22 +229,19 @@ class HomeActivity : AppCompatActivity(), OnMapReadyCallback {
     // 載入地圖
     private lateinit var myMap: GoogleMap
     private fun loadMap() {
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment?
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
     }
     // 要求權限
-    @RequiresApi(api = Build.VERSION_CODES.O)
     override fun onRequestPermissionsResult(
         requestCode: Int,
-        permissions: Array<String?>,
+        permissions: Array<String>,
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == 0) {
-            if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
-                finish()
-            } else {
+        if (grantResults.isNotEmpty() && requestCode == 1) {
+            if (grantResults[0] == PackageManager.PERMISSION_DENIED) finish()
+            else {
                 loadMap()
             }
         }
