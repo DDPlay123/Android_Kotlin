@@ -2,6 +2,7 @@ package com.tutorial.httpgsonget
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btnSearch = findViewById<Button>(R.id.btn_search)
+        val listView = findViewById<ListView>(R.id.listview)
 
         // GET Method
         btnSearch.setOnClickListener {
@@ -36,18 +38,13 @@ class MainActivity : AppCompatActivity() {
                     // 4. 建立 Gson 並使用其 fromJson()方法，將 JSON 字串以 MyObject 格式輸出
                     val data = Gson().fromJson(json, DataModel::class.java)
                     // 5. 顯示結果
-                    val items = arrayOfNulls<String>(data.results.content.size)
-                    for (i in 0 until data.results.content.size) {
-                        items[i] = "lat:${data.results.content[i].lat}" +
-                                   ", lng:${data.results.content[i].lng}" +
-                                   ", name:${data.results.content[i].name}"
+                    val items = ArrayList<Items>()
+                    data.results.content.forEach {
+                        items.add(Items(it.name, it.lat, it.lng))
                     }
                     // 切換到主執行緒將畫面更新
                     runOnUiThread {
-                        AlertDialog.Builder(this@MainActivity)
-                            .setTitle("空氣品質")
-                            .setItems(items, null)
-                            .show()
+                        listView.adapter = Adapter(this@MainActivity, items)
                     }
                 }
             })

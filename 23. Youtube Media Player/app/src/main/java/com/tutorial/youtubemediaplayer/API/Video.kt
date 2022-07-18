@@ -10,8 +10,8 @@ class Video {
     // headers => Content-Type: application/json
     // body => {guestKey:"*****", videoID:"*****", mode:0 or 1}
     // mode: 0->不增加總瀏覽數(於詳細頁面重刷時), 1->增加總瀏覽數(從列表進入時) 使用兩個都可
-    private val guestKey = "----------------------4de1a599ae4"
-    private val videoID = "---------------------0c2851a"
+    private val guestKey = "44f6cfed-b251-4952-b6ab-34de1a599ae4"
+    private val videoID = "5edfb3b04486bc1b20c2851a"
 
     fun postData(): Request {
         val url: String = HttpUrl.Builder()

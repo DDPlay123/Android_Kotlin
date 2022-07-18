@@ -54,6 +54,8 @@ class HomeActivity : AppCompatActivity(), OnMapReadyCallback {
         database = Database(this).writableDatabase
         // 要求權限
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 1)
+        // API
+        if (details.isEmpty()) getData()
         // 載入地圖
         loadMap()
         // 搜尋功能
@@ -89,8 +91,7 @@ class HomeActivity : AppCompatActivity(), OnMapReadyCallback {
                 val rowList = layoutInflater.inflate(R.layout.dialog_record, null)
                 dialogRecord.setView(rowList)
                 // 使用 dialog_record 的 ListView
-                val listView =
-                    rowList.findViewById<ListView>(R.id.list_record)
+                val listView = rowList.findViewById<ListView>(R.id.list_record)
                 val adapter = RecordAdapter(this, data, R.layout.item_record)
                 listView.adapter = adapter
                 // 彈出 Dialog 畫面
@@ -122,7 +123,6 @@ class HomeActivity : AppCompatActivity(), OnMapReadyCallback {
                 1
             )
         } else {
-            getData()
             myMap = p0
             // 顯示目前位置與目前位置的按鈕
             myMap.isMyLocationEnabled = true
@@ -232,6 +232,7 @@ class HomeActivity : AppCompatActivity(), OnMapReadyCallback {
             override fun onResponse(call: Call, response: Response) {
                 val json = response.body?.string()
                 val dataModel = Gson().fromJson(json, DataModel::class.java)
+                Log.d("DATA", json.toString())
                 dataModel.results.content.forEach {
                     details.add(DetailData(it.name, it.lat.toFloat(), it.lng.toFloat(), it.vicinity, it.photo, it.star, it.landscape))
                 }

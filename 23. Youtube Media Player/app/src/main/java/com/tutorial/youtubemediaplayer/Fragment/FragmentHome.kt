@@ -3,6 +3,7 @@ package com.tutorial.youtubemediaplayer.Fragment
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -51,14 +52,12 @@ class FragmentHome: Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(view.context)
         swipeRefreshLayout.setColorSchemeResources(R.color.blue)
         swipeRefreshLayout.setOnRefreshListener {
-            data.clear()
-            getData()
+            Log.d("Refresh", "Refresh Now~")
             adapter.notifyDataSetChanged()
             swipeRefreshLayout.isRefreshing = false
         }
     }
 
-    var data: ArrayList<VideoDetail> = ArrayList()
     var sentence: ArrayList<Sentence> = ArrayList()
     private fun getData() {
         val request: Request = Video().postData()
@@ -70,6 +69,7 @@ class FragmentHome: Fragment() {
             override fun onResponse(call: Call, response: Response) {
                 val json = response.body?.string()
                 val objectData = Gson().fromJson(json, ObjectData::class.java)
+                val data: ArrayList<VideoDetail> = ArrayList()
                 // Sentence、VideoURL、MainEditor
                 objectData.result.videoInfo.captionResult.results.forEach { results ->
                     results.captions.forEachIndexed { index, captions ->
