@@ -53,23 +53,26 @@ class FragmentHome: Fragment() {
         swipeRefreshLayout.setColorSchemeResources(R.color.blue)
         swipeRefreshLayout.setOnRefreshListener {
             Log.d("Refresh", "Refresh Now~")
+            getData()
             adapter.notifyDataSetChanged()
             swipeRefreshLayout.isRefreshing = false
         }
     }
 
-    var sentence: ArrayList<Sentence> = ArrayList()
     private fun getData() {
         val request: Request = Video().postData()
         OkHttpClient().newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
+                Log.d("DATA", "Error~")
                 e.printStackTrace()
             }
             @SuppressLint("NotifyDataSetChanged")
             override fun onResponse(call: Call, response: Response) {
+                Log.d("DATA", "Success~")
                 val json = response.body?.string()
                 val objectData = Gson().fromJson(json, ObjectData::class.java)
                 val data: ArrayList<VideoDetail> = ArrayList()
+                val sentence: ArrayList<Sentence> = ArrayList()
                 // Sentence、VideoURL、MainEditor
                 objectData.result.videoInfo.captionResult.results.forEach { results ->
                     results.captions.forEachIndexed { index, captions ->
