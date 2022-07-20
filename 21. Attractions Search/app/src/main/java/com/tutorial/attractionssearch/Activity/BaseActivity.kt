@@ -27,10 +27,9 @@ class BaseActivity : AppCompatActivity() {
         val adapter: PagerAdapter = SliderAdapter(this, gallery)
         setToolbar((position + 1).toString() + "/" + count)
         viewPager.adapter = adapter
-        // 起始位置
+        viewPager.offscreenPageLimit = 1
         // 起始位置
         viewPager.currentItem = position
-        // 監聽畫面滑動，以變換 actionbar
         // 監聽畫面滑動，以變換 actionbar
         viewPager.addOnPageChangeListener(listener)
     }

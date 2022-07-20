@@ -54,8 +54,6 @@ class HomeActivity : AppCompatActivity(), OnMapReadyCallback {
         database = Database(this).writableDatabase
         // 要求權限
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 1)
-        // API
-        if (details.isEmpty()) getData()
         // 載入地圖
         loadMap()
         // 搜尋功能
@@ -124,6 +122,8 @@ class HomeActivity : AppCompatActivity(), OnMapReadyCallback {
             )
         } else {
             myMap = p0
+            // API
+            if (details.size == 0) getData()
             // 顯示目前位置與目前位置的按鈕
             myMap.isMyLocationEnabled = true
             // 初始化地圖中心點及size
